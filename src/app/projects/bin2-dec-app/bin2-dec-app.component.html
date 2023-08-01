@@ -1,0 +1,38 @@
+<section class="h-screen pt-4 flex flex-col items-center justify-center gap-7 bg-gray-950 text-white">
+
+  <h1 class="text-3xl font-bold tracking-wide">
+    Bin2Dec-App
+  </h1>
+
+  <form class="md:w-1/3">
+    <label for="UserEmail"
+      [ngClass]="error ? 'border-red-500 focus-within:border-red-500' : 'border-gray-200 focus-within:border-blue-600'"
+      class="block overflow-hidden rounded-md border border-gray-200 px-3 py-2 shadow-sm focus-within:border-blue-600 dark:border-gray-700 dark:bg-gray-800">
+      <span class="text-xs font-medium text-gray-700 dark:text-gray-200">
+        <span *ngIf="error; else validDigits">
+          You entered a non-binary digit (please enter only 0 or 1).
+        </span>
+
+        <ng-template #validDigits>
+          Enter a binary number.
+        </ng-template>
+      </span>
+
+      <input type="number" id="UserEmail" placeholder="0 or 1" name="binaryNumber" [(ngModel)]="binaryNumber"
+        (input)="convertBinaryToDecimal()"
+        class="mt-1 w-full border-none bg-transparent p-0 focus:border-transparent focus:outline-none focus:ring-0 dark:text-white sm:text-sm" />
+    </label>
+
+  </form>
+
+  <h3 class="text-xl font-bold tracking-widest">
+    Get a decimal conversion
+  </h3>
+
+  <p class="text-lg">Decimal Equivalent:
+    <span *ngIf="binaryNumber && decimalNumber">
+      {{ decimalNumber }}
+    </span>
+  </p>
+
+</section>
