@@ -34,22 +34,24 @@ export class CSV2JSONComponent {
   }
 
   handleReadCSVInput() {
-    const CSVToArray: string[][] = this.handleCSVToArray(this.csvInput);
-    const objArray: any[] = [];
+    if (this.csvInput) {
+      const CSVToArray: string[][] = this.handleCSVToArray(this.csvInput);
+      const objArray: any[] = [];
 
-    for (let i = 1; i < CSVToArray.length; i++) {
-      objArray[i - 1] = {};
+      for (let i = 1; i < CSVToArray.length; i++) {
+        objArray[i - 1] = {};
 
-      for (
-        let k = 0;
-        k < CSVToArray[0].length && k < CSVToArray[i].length;
-        k++
-      ) {
-        let key = CSVToArray[0][k];
-        objArray[i - 1][key] = CSVToArray[i][k];
+        for (
+          let k = 0;
+          k < CSVToArray[0].length && k < CSVToArray[i].length;
+          k++
+        ) {
+          let key = CSVToArray[0][k];
+          objArray[i - 1][key] = CSVToArray[i][k];
+        }
       }
+      const json = JSON.stringify(objArray);
+      this.jsonInput = JSON.stringify(JSON.parse(json), null, 2);
     }
-    const json = JSON.stringify(objArray);
-    this.jsonInput = JSON.stringify(JSON.parse(json), null, 2);
   }
 }
