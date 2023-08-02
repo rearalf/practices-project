@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Bin2DecAppComponent } from './projects/bin2-dec-app/bin2-dec-app.component';
+import { BorderRadiusPreviewerComponent } from './projects/border-radius-previewer/border-radius-previewer.component';
 
 @NgModule({
-  declarations: [AppComponent, Bin2DecAppComponent],
+  declarations: [AppComponent, Bin2DecAppComponent, BorderRadiusPreviewerComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
