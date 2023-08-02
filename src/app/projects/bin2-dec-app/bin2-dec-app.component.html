@@ -18,7 +18,7 @@
         </ng-template>
       </span>
 
-      <input type="number" id="UserEmail" placeholder="0 or 1" name="binaryNumber" [(ngModel)]="binaryNumber"
+      <input type="number" id="UserEmail" min="0" placeholder="0 or 1" name="binaryNumber" [(ngModel)]="binaryNumber"
         (input)="convertBinaryToDecimal()"
         class="mt-1 w-full border-none bg-transparent p-0 focus:border-transparent focus:outline-none focus:ring-0 dark:text-white sm:text-sm" />
     </label>
