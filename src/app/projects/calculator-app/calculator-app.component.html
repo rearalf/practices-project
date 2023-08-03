@@ -1,0 +1,102 @@
+<section class="h-screen flex flex-col items-center justify-center gap-7 bg-gray-950 text-white">
+  <h1 class="text-3xl font-bold tracking-wide pt-5">Calculator</h1>
+
+  <div class="bg-gray-800 flex flex-col p-5 rounded-md gap-5 w-4/5 md:w-96">
+
+    <div class="bg-gray-900 flex flex-col  p-3 rounded-md ">
+      <p class="text-4xl h-9">
+        {{inputNumber}}
+      </p>
+      <p class="text-3xl h-12 px-2 overflow-x-auto scrollbar whitespace-nowrap">
+        {{numbers.join('')}}
+      </p>
+    </div>
+
+    <div class="bg-gray-900 p-3 rounded-md grid grid-cols-4 gap-2">
+      <!-- Buttons for 7, 8, 9, DEL -->
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400aa"
+        (click)="handleGetValues('7')">
+        7
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('8')">
+        8
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('9')">
+        9
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('C')">
+        C
+      </button>
+
+      <!-- Buttons for 4, 5, 6, + -->
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('4')">
+        4
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('5')">
+        5
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('6')">
+        6
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('+')">
+        +
+      </button>
+
+      <!-- Buttons for 1, 2, 3, - -->
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('1')">
+        1
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('2')">
+        2
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('3')">
+        3
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('-')">
+        -
+      </button>
+
+      <!-- Buttons for ., 0, /, x -->
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('.')">
+        .
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('0')">
+        0
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('/')">
+        /
+      </button>
+      <button class="bg-gray-300 p-3 text-gray-950 font-bold text-2xl rounded-md active:bg-gray-400"
+        (click)="handleGetValues('x')">
+        x
+      </button>
+
+      <!-- RESET button with colspan 2 -->
+      <button class="bg-gray-950 p-3 text-gray-300 font-bold text-2xl rounded-md col-span-2 active:opacity-50"
+        (click)="handleGetValues('AC')">
+        AC
+      </button>
+
+      <!-- = button with colspan 2 -->
+      <button class="bg-red-500 p-3 text-gray-300 font-bold text-2xl rounded-md col-span-2 active:bg-red-700"
+        (click)="handleGetValues('=')">
+        =
+      </button>
+
+    </div>
+  </div>
+</section>

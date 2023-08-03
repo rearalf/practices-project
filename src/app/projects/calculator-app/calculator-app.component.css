@@ -1,0 +1,14 @@
+/* Estilo del scrollbar en navegadores WebKit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 4px; /* Ancho del scrollbar */
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Color del fondo del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #030712; /* Color del thumb (la barra del scrollbar) */
+  border-radius: 3px; /* Radio del thumb */
+}
