@@ -1,0 +1,87 @@
+<section class="h-screen pt-4 flex flex-col items-center gap-7 bg-gray-950 text-white">
+
+  <h1 class="text-3xl font-bold tracking-wide">
+    My calendar
+  </h1>
+
+  <div class="flex flex-col gap-7 items-center m-4 xl:grid xl:grid-cols-2 xl:items-start">
+    <div class="flex flex-col gap-3 items-center">
+      <h2 class="text-xl font-bold">
+        Today: {{currentDate | date:'EEEE, MMMM yyyy'}}
+      </h2>
+      <div class="w-full flex justify-between">
+        <button (click)="handleChangeMonth(0)"
+          class="inline-block rounded bg-indigo-600 px-3 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
+          {{ "<" }}
+        </button>
+        <button (click)="handleChangeMonth(1)"
+          class="inline-block rounded bg-indigo-600 px-3 py-2 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
+          >
+        </button>
+
+      </div>
+      <ol class="list-none grid grid-cols-7">
+        <li
+          class="text-center p-2 font-semibold border border-gray-300 whitespace-nowrap overflow-hidden overflow-ellipsis">
+          Monday
+        </li>
+        <li
+          class="text-center p-2 font-semibold border border-gray-300 whitespace-nowrap overflow-hidden overflow-ellipsis">
+          Tuesday
+        </li>
+        <li
+          class="text-center p-2 font-semibold border border-gray-300 whitespace-nowrap overflow-hidden overflow-ellipsis">
+          Wednesday
+        </li>
+        <li
+          class="text-center p-2 font-semibold border border-gray-300 whitespace-nowrap overflow-hidden overflow-ellipsis">
+          Thursday
+        </li>
+        <li
+          class="text-center p-2 font-semibold border border-gray-300 whitespace-nowrap overflow-hidden overflow-ellipsis">
+          Friday
+        </li>
+        <li
+          class="text-center p-2 font-semibold border border-gray-300 whitespace-nowrap overflow-hidden overflow-ellipsis">
+          Saturday
+        </li>
+        <li
+          class="text-center p-2 font-semibold border border-gray-300 whitespace-nowrap overflow-hidden overflow-ellipsis">
+          Sunday
+        </li>
+        <ng-container *ngFor="let day of days">
+          <li class="text-center font-bold border border-gray-300">
+            <ng-container *ngIf="day !== null">
+              <button [ngClass]="day === currentDay && currentMonth === month ? 'text-indigo-400' : ''"
+                class="w-full p-2 hover:bg-gray-900" (click)="handleClick(day)">
+                {{day}}
+              </button>
+            </ng-container>
+          </li>
+        </ng-container>
+      </ol>
+    </div>
+
+    <div class="mt-6 md:mt-0 w-full ">
+      <form class="flex gap-3">
+        <label for="appoinment"
+          class="relative block overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 dark:border-gray-700 dark:bg-gray-800 flex-1">
+          <input type="text" id="appoinment" placeholder="Let's go to the park"
+            class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 dark:text-white sm:text-sm" />
+
+          <span
+            class="absolute start-3 top-3 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-3 peer-focus:text-xs dark:text-gray-200">
+            Appoinment
+          </span>
+        </label>
+        <button
+          class="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
+          Add Appoinment
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+
+</section>

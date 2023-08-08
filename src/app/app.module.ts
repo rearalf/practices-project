@@ -9,9 +9,10 @@ import { BorderRadiusPreviewerComponent } from './projects/border-radius-preview
 import { CSV2JSONComponent } from './projects/csv2-json/csv2-json.component';
 import { CalculatorAppComponent } from './projects/calculator-app/calculator-app.component';
 import { ButtonComponent } from './projects/calculator-app/button/button.component';
+import { MyCalendarComponent } from './projects/my-calendar/my-calendar.component';
 
 @NgModule({
-  declarations: [AppComponent, Bin2DecAppComponent, BorderRadiusPreviewerComponent, CSV2JSONComponent, CalculatorAppComponent, ButtonComponent],
+  declarations: [AppComponent, Bin2DecAppComponent, BorderRadiusPreviewerComponent, CSV2JSONComponent, CalculatorAppComponent, ButtonComponent, MyCalendarComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
